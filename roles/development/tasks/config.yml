@@ -1,0 +1,16 @@
+- name: Copy .vimrc
+  copy: src=files/vimrc dest=~/.vimrc
+  apt: name={{item}}
+  with_items:
+    - htop
+    - curl 
+    - gcc 
+    - git 
+    - cmake 
+    - python-dev 
+    - python3-all-dev 
+    - tmux 
+    - lnav 
+    - zsh 
+    - g++
+    - tmux
