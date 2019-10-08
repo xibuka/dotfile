@@ -6,3 +6,4 @@
       changed_when: False
   tasks:
     - include: roles/tasks/packages.yml
+    - include: roles/tasks/config.yml
