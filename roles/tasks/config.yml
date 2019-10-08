@@ -1,2 +1,2 @@
 - name: setup tmux 
-  copy: src=../files/tmux.conf dest=~/.vimrc
+  copy: src=../files/tmux.conf dest=/home/{{ ansible_user_id }}/.tmux.conf
