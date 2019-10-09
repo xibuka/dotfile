@@ -30,6 +30,6 @@
     depth: 1
 
 - name: install fzf
-  script: /home/{{ username }}/.fzf/install --key-bindings --completion --update-rc
+  script: /home/{{ username }}/.fzf/install --xdg --key-bindings --completion --update-rc
 
 
