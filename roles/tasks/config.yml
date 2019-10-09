@@ -1,10 +1,13 @@
 - name: setup tmux 
   copy: src=../files/tmux.conf dest=/home/{{ username }}/.tmux.conf
 
-- name: download zsh template
-  get_url:
-    url:  https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/templates/zshrc.zsh-template
-    dest: /home/{{ username }}/.zshrc
+- name: download zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: /home/{{ username }}/.oh-my-zsh
+
+- name: copy zshrc
+  copy: src=/home/{{ username }}/.oh-my-zsh/templates/zshrc.zsh-template dest=/home/{{ username }}/.zshrc
 
 - name: config zshrc
   lineinfile:
