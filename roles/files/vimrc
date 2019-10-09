@@ -12,7 +12,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate'
-
 " ---------- Plugins
 call plug#end()                      " Initialize plugin system
 " --------------------- end of vim-plug   ---------------------
@@ -20,16 +19,13 @@ call plug#end()                      " Initialize plugin system
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
-" enable filetype dectection and ft specific plugin/indent
-"filetype plugin indent on " comment out for copy
-
 "--------
 " Vim UI
 "--------
 " color scheme
 let g:solarized_termcolors=256  
 set background=dark  
-colorscheme solarized 
+"colorscheme solarized 
 " highlight current line and column
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
@@ -71,34 +67,23 @@ set textwidth=79
 set smarttab
 set expandtab                  " expand tab to space
 set clipboard=unnamedplus      " enable clipboard 
+set gfn=DroidSansMonoForPowerline\ Nerd\ Font\ 9
 
 " When you type the first tab, it will complete as much as possible, the second
 " tab hit will provide a list, the third and subsequent tabs will cycle through
 " completion options so you can complete the file without further keys
 set wildmode=longest,list,full
-set wildmenu            " completion with menu
-" This changes the default display of tab and CR chars in list mode
-" set listchars=tab:▸\ ,eol:¬
+set wildmenu                   " completion with menu
 
 if (exists('+colorcolumn'))    " 80th-column if you write code
-"  set colorcolumn=80
-"  highlight ColorColumn ctermbg=9
+  set colorcolumn=80
+  highlight ColorColumn ctermbg=9
 endif
 
 " GNU Global
 let GtagsCscope_Auto_Load = 1
 let GtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
-
-autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-
-
 
 " Keybindings 
 " our <leader> will be the space key
@@ -188,7 +173,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeT
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              YouCompleteMe                              "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_min_num_identifier_candidate_chars = 4
 let g:ycm_extra_conf_globlist = ['~/repos/*']
@@ -246,19 +230,4 @@ cnoreabbrev AG Ack
 if executable('ag')
 let g:ackprg = 'ag --vimgrep --smart-case'
 endif
-
-"------------------
-" Useful Functions
-"------------------
-
-" When editing a file, always jump to the last cursor position
-autocmd BufReadPost *
-\ if ! exists("g:leave_my_cursor_position_alone") |
-\     if line("'\"") > 0 && line ("'\"") <= line("$") |
-\         exe "normal g'\"" |
-\     endif |
-\ endif
-
-
-set gfn=DroidSansMonoForPowerline\ Nerd\ Font\ 9
 

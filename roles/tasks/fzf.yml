@@ -1,0 +1,9 @@
+- name: download fzf
+  git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: ~/.fzf
+    depth: 1
+
+- name: install fzf
+  script: /home/{{ username }}/.fzf/install --key-bindings --completion --update-rc
+

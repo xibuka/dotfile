@@ -12,6 +12,7 @@
     - lnav 
     - zsh 
     - g++
-    - tmux
     - tree
     - golang-go
+  become: true
+

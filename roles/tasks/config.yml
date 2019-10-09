@@ -23,45 +23,44 @@
     url:  https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
     dest: /home/{{ username }}/.dircolors
 
-## use vim-plug to do both installing fzf on your system and enabling it on Vim
-## - name: download fzf
-##   git:
-##     repo: https://github.com/junegunn/fzf.git
-##     dest: /home/{{ username }}/.fzf
-##     depth: 1
-## 
-## - name: install fzf
-##   script: /home/{{ username }}/.fzf/install --xdg --key-bindings --completion --update-rc
+- name: download fzf
+  git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: /home/{{ username }}/.fzf
+    depth: 1
 
-    ## - name: confirm .vim directory exist
-    ##   stat:
-    ##     path: /home/{{ username }}/.vim/autoload/
+- name: install fzf
+  script: /home/{{ username }}/.fzf/install --xdg --key-bindings --completion --update-rc
 
-- name: create .vim folder
-  file:
-    path: /home/{{ username }}/.vim
-    state: directory
-    mode: 0755
-  become_user: "{{ username }}"
+   ## - name: confirm .vim directory exist
+   ##   stat:
+   ##     path: /home/{{ username }}/.vim/autoload/
 
-- name: create .vim/autoload folder
-  file:
-    path: /home/{{ username }}/.vim/autoload
-    state: directory
-    mode: 0755
-  become_user: "{{ username }}"
-
-
-- name: download vim-plug
-  get_url:
-    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    dest: /home/{{ username }}/.vim/autoload/plug.vim
-
-- name: copy vimrc
-  copy: src=../files/vimrc dest=/home/{{ username }}/.vimrc
-
-- name: Install plugs
-  shell: vim -c PlugInstall -c qa
-  #become: yes
-  become_user: "{{ username }}"
- 
+  ##- name: create .vim folder
+  ##  file:
+  ##    path: /home/{{ username }}/.vim
+  ##    state: directory
+  ##    mode: 0755
+  ##  become_user: "{{ username }}"
+  ##
+  ##- name: create .vim/autoload folder
+  ##  file:
+  ##    path: /home/{{ username }}/.vim/autoload
+  ##    state: directory
+  ##    mode: 0755
+  ##  become_user: "{{ username }}"
+  ##
+  ##
+  ##- name: download vim-plug
+  ##  get_url:
+  ##    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  ##    dest: /home/{{ username }}/.vim/autoload/plug.vim
+  ##
+  ##- name: copy vimrc
+  ##  copy: src=../files/vimrc dest=/home/{{ username }}/.vimrc
+  ##
+  ##- name: Install plugs
+  ##  shell: vim -c PlugInstall -c qa
+  ##  #become: yes
+  ##  become_user: "{{ username }}"
+  ## 

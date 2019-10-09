@@ -1,0 +1,16 @@
+- name: download oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
+
+- name: copy zshrc
+  copy: src=~/.oh-my-zsh/templates/zshrc.zsh-template dest=~/.zshrc
+
+- name: config zshrc
+  lineinfile:
+    path: ~/.zshrc
+    regexp: ZSH_THEME=\"robbyrussell\"
+    line: ZSH_THEME="agnoster"
+
+- name: set zsh as default shell
+  command: chsh -s '/usr/bin/zsh' {{ ansible_user_id }}
