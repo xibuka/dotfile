@@ -1,7 +1,0 @@
-- hosts: localhost
-  tasks:
-    - include: roles/tasks/tmux.yml
-    - include: roles/tasks/zsh.yml
-    - include: roles/tasks/fzf.yml
-    - include: roles/tasks/vim.yml
-
