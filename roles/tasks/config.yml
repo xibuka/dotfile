@@ -10,4 +10,4 @@
   lineinfile:
     path: /home/{{ username }}/.zshrc
     regexp: ZSH_THEME=\"robbyrussell\"
-    line: ZSH_THEME=\"agnoster\"
+    line: ZSH_THEME="agnoster"
