@@ -20,3 +20,9 @@
 
 - name: Install plugs
   shell: vim -c PlugInstall -c qa
+
+- name: enable 'colorscheme solarized' in vimrc
+  lineinfile:
+    path: ~/.vimrc
+    regexp: \"colorscheme solarized
+    line: colorscheme solarized
