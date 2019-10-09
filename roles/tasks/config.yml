@@ -11,3 +11,10 @@
     path: /home/{{ username }}/.zshrc
     regexp: ZSH_THEME=\"robbyrussell\"
     line: ZSH_THEME="agnoster"
+
+- name: download dircolors
+  get_url:
+    url:  https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
+    dest: /home/{{ username }}/.dircolors
+
+
