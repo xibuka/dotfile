@@ -33,12 +33,20 @@
 ## - name: install fzf
 ##   script: /home/{{ username }}/.fzf/install --xdg --key-bindings --completion --update-rc
 
+    ## - name: confirm .vim directory exist
+    ##   stat:
+    ##     path: /home/{{ username }}/.vim/autoload/
+
 - name: download vim-plug
-  script: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: /home/{{ username }}/.vim/autoload/plug.vim
 
 - name: copy vimrc
   copy: src=../files/vimrc dest=/home/{{ username }}/.vimrc
 
 - name: Install plugs
-  script: vim +PlugInstall +qall
+  shell: vim -c PlugInstall -c qa
+  #become: yes
+  become_user: "{{ username }}"
  
