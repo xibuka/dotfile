@@ -15,6 +15,9 @@
     regexp: ZSH_THEME=\"robbyrussell\"
     line: ZSH_THEME="agnoster"
 
+- name: set zsh as default shell
+  command: chsh -s '/usr/bin/zsh' {{ username }}
+
 - name: download dircolors
   get_url:
     url:  https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
