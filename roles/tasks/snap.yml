@@ -1,0 +1,30 @@
+- name: check if has GUI
+  command: dpkg-query -W 'ubuntu-desktop'
+  register: is_desktop
+
+- name: Install snap application
+  become: true
+  snap:
+    name:
+        - lxd
+        - juju                --classic
+        - juju-crashdump      --classic
+        - juju-wait           --classic
+        - charm               --classic
+        - kubectl             --classic
+        - openstackclients    --classic
+        - multipass           --classic --beta
+ 
+- name: Install GUI snap application
+  become: true
+  snap:
+    name:
+        - chromium
+        - code                --classic
+        - slack               --classic
+        - snapcraft           --classic
+        - spotify
+        - telegram-desktop
+        - vlc
+    when: is_desktop|failed
+ 

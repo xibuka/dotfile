@@ -4,6 +4,7 @@
   become: true
 
 - name: Install packages
+  become: true
   apt: name={{item}}
   with_items:
     - ack
@@ -20,5 +21,125 @@
     - g++
     - tree
     - golang-go
-  become: true
-
+    # font
+    - fonts-dejavu
+    - fonts-ipafont
+    # invasgate
+    - powertop
+    - powerstat
+    - sysstat
+      ##     - etckeeper
+      ## 
+      ##     # GNOME shell
+      ##     - chrome-gnome-shell
+      ##     - gnome-shell-extension-remove-dropdown-arrows
+      ##     - gnome-shell-extension-system-monitor
+      ##   
+      ##     # xkeysnail deps
+      ##     - python3-xlib
+      ##     - python3-evdev
+      ##   
+      ##     # dev - minimal
+      ##     - packaging-dev
+      ##     - debian-goodies  # dman
+      ##     - git
+      ##     - git-review
+      ##     - hub
+      ##     - bzr
+      ##     - bzrtools
+      ##     - bzr-fastimport
+      ##     - shellcheck
+      ##     - yamllint
+      ##     - tox
+      ##     - zeal
+      ##     - python3-doc
+      ##     - python3-examples
+      ##     - python3-pip
+      ##     - python3-flake8
+      ##     - python3-hacking
+      ##   
+      ##     # dev
+      ##     #- exuberant-ctags
+      ##     #- npm
+      ##     #- python3-yapf
+      ##   
+      ##     # portable mirror
+      ##     - simplestreams
+      ##     - ubuntu-cloudimage-keyring
+      ##     - apt-mirror
+      ##     - debmirror
+      ##   
+      ##     # encryption
+      ##     - encfs
+      ##   
+      ##     # vpn
+      ##     - network-manager-fortisslvpn-gnome
+      ##     - network-manager-iodine-gnome
+      ##     - network-manager-l2tp-gnome
+      ##     - network-manager-openconnect-gnome
+      ##     - network-manager-openvpn-gnome
+      ##     - network-manager-vpnc-gnome
+      ##     - network-manager-strongswan
+      ##     - ike-scan
+      ##   
+      ##     # virt
+      ##     - uvtool
+      ##     - virt-manager
+      ##     - ovmf
+      ##   
+      ##     # doc
+      ##     - diffpdf
+      ##   
+      ##     # fonts
+      ##   
+      ##     # utils - apt
+      ##     - apt-listchanges
+      ##     - dlocate
+      ##     - ppa-purge
+      ##   
+      ##     # utils - terminal
+      ##     - byobu
+      ##     - colordiff
+      ##     - dwdiff
+      ##     - ccze
+      ##     - python3-pygments
+      ##     - xclip
+      ##     - oathtool
+      ##     - jq
+      ##     - libxml-xpath-perl
+      ##     - pwgen
+      ##   
+      ##     # utils - network
+      ##     - curl
+      ##     - sshuttle
+      ##     - nmap
+      ##     - sipcalc
+      ##     - ipcalc
+      ##     - jnettop
+      ##     - httping
+      ##     - zsync
+      ##     - freeipmi-tools
+      ##     - w3m
+      ##   
+      ##     # utils - indicator
+      ##     - diodon
+      ##   
+      ##     # other
+      ##     - dconf-editor
+      ##     - gnome-tweaks
+      ##     - gimp
+      ##     - inkscape
+      ##     - yubikey-personalization-gui
+      ##     - gnome-sound-recorder
+      ##   
+      ##     # storage/filesystem
+      ##     - thin-provisioning-tools
+      ##     - exfat-fuse
+      ##   
+      ##     # investigation
+      ##     - dstat
+      ##     - stress-ng
+      ##     - fio
+      ##     - iperf3
+      ##     - sysprof
+      ##     - linux-doc
