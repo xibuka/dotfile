@@ -1,0 +1,18 @@
+- name: render dconf
+  template:
+    src: ../files/dconf.ini.j2
+    dest: ~/.config/dconf/user.ini
+  register: dconf
+
+- name: reset dconf
+  command: dconf reset -f /
+  when: dconf is changed
+
+- name: pause to prevent dconf race conditions
+  pause:
+    seconds: 5
+  when: dconf is changed
+
+- name: import dconf
+  shell: dconf load / < ~/.config/dconf/user.ini
+  when: dconf is changed
