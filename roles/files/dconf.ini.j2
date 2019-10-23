@@ -11,7 +11,7 @@ preload-engines=['xkb:us::eng']
 version='1.5.21'
 
 [org/gnome/control-center]
-last-panel='power'
+last-panel='region'
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'Sundry', 'YaST']
@@ -34,11 +34,12 @@ name='suse-yast.directory'
 translate=true
 
 [org/gnome/desktop/input-sources]
-sources=[('xkb', 'us')]
+mru-sources=[('xkb', 'us'), ('ibus', 'libpinyin'), ('ibus', 'mozc-jp')]
+sources=[('xkb', 'us'), ('ibus', 'mozc-jp'), ('ibus', 'libpinyin')]
 xkb-options=@as []
 
 [org/gnome/desktop/interface]
-gtk-im-module='gtk-im-context-simple'
+gtk-im-module='ibus'
 
 [org/gnome/desktop/notifications]
 application-children=['gnome-network-panel', 'org-gnome-software', 'chromium-chromium']
@@ -63,12 +64,20 @@ allow-volume-above-100-percent=false
 migrated=true
 network-monitor-gio-name=''
 
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(890, 550)
+maximized=false
+
 [org/gnome/nm-applet/eap/1f2ae812-6f9c-33b3-8f52-ea4ff876739a]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [org/gnome/settings-daemon/plugins/color]
-night-light-last-coordinates=(35.567298560115191, 139.50299999999999)
+night-light-last-coordinates=(35.558299280057597, 139.50299999999999)
 
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-timeout=3600
