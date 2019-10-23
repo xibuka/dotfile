@@ -29,6 +29,7 @@
     - powertop
     - powerstat
     - sysstat
+    - vim
       ##     - etckeeper
       ## 
       ##     # GNOME shell
