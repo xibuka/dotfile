@@ -24,6 +24,7 @@
     # font
     - fonts-dejavu
     - fonts-ipafont
+    - fonts-powerline
     # invasgate
     - powertop
     - powerstat
