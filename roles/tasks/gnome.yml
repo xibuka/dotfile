@@ -16,3 +16,15 @@
 - name: import dconf
   shell: dconf load / < ~/.config/dconf/user.ini
   when: dconf is changed
+
+- name: check if Dropbox is running
+  command: dropbox running
+  register: dropbox
+  changed_when: False
+  ignore_errors: True
+
+- name: Dropbox start
+  command: dropbox start -i
+  environment:
+    DISPLAY: ''
+  when: dropbox is success
