@@ -7,6 +7,7 @@
   become: true
   apt: name={{item}}
   with_items:
+    - vim
     - ack
     - htop
     - curl 
@@ -29,8 +30,10 @@
     - powertop
     - powerstat
     - sysstat
-    - vim
     - nautilus-dropbox
+    # exfat
+    - exfat-fuse 
+    - exfat-utils
       ##     - etckeeper
       ## 
       ##     # GNOME shell
