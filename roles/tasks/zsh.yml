@@ -6,11 +6,19 @@
 - name: copy zshrc
   copy: src=~/.oh-my-zsh/templates/zshrc.zsh-template dest=~/.zshrc
 
-- name: config zshrc
+- name: download theme
+  get_url: url={{ http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme }} dest={{ ~/.oh_my_zsh/themes }}/
+
+- name: config zsh theme
   lineinfile:
     path: ~/.zshrc
     regexp: ZSH_THEME=\"robbyrussell\"
-    line: ZSH_THEME="agnoster"
+    line: ZSH_THEME="bullet-train"
+
+- name: customize prompt
+  lineinfile:
+    path: ~/.zshrc
+    line: BULLETTRAIN_PROMPT_ORDER=(time status custom context dir git hg cmd_exec_time)
 
 - name: set zsh as default shell
   command: chsh -s '/usr/bin/zsh' {{ ansible_user_id }}
