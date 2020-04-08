@@ -9,7 +9,7 @@
 - name: download theme
   get_url: 
     url : http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
-    dest : ~/.oh_my_zsh/themes/bullet-train.zsh-theme
+    dest : ~/.oh-my-zsh/themes/bullet-train.zsh-theme
 
 - name: config zsh theme
   lineinfile:
