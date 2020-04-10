@@ -14,7 +14,8 @@
     - gcc 
     - git 
     - cmake 
-    - python-dev 
+    #- python-dev 
+    - python3-all
     - python3-all-dev 
     - tmux 
     - lnav 
