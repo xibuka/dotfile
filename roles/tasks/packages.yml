@@ -5,36 +5,33 @@
 
 - name: Install packages
   become: true
-  apt: name={{item}}
-  with_items:
-    - vim
-    - ack
-    - htop
-    - curl 
-    - gcc 
-    - git 
-    - cmake 
-    #- python-dev 
-    - python3-all
-    - python3-all-dev 
-    - tmux 
-    - lnav 
-    - zsh 
-    - g++
-    - tree
-    - golang-go
-    # font
-    - fonts-dejavu
-    - fonts-ipafont
-    - fonts-powerline
-    # invasgate
-    - powertop
-    - powerstat
-    - sysstat
-    - nautilus-dropbox
-    # exfat
-    - exfat-fuse 
-    - exfat-utils
+  apt: name: [ 
+      'vim', 
+      'ack', 
+      'htop', 
+      'curl', 
+      'gcc', 
+      'git', 
+      'cmake', 
+      'python3-all', 
+      'python3-all-dev', 
+      'tmux', 
+      'lnav', 
+      'zsh', 
+      'g++', 
+      'tree', 
+      'golang-go', 
+      'fonts-dejavu', 
+      'fonts-ipafont', 
+      'fonts-powerline', 
+      'powertop', 
+      'powerstat', 
+      'sysstat', 
+      'nautilus-dropbox', 
+      'exfat-fuse', 
+      'exfat-utils'
+      ]
+  
       ##     - etckeeper
       ## 
       ##     # GNOME shell
