@@ -5,7 +5,8 @@
 
 - name: Install packages
   become: true
-  apt: name: [ 
+  apt: 
+    name: [ 
       'vim', 
       'ack', 
       'htop', 
