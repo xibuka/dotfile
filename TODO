@@ -1,1 +1,36 @@
 - automaticlly install fzf
+When using ansible to run install script, the zsh file will be in temp
+```
+$ cat /home/ubuntu/.fzf.zsh
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/ubuntu/.ansible/tmp/ansible-tmp-1629445058.9760258-177209446904101/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/home/ubuntu/.ansible/tmp/ansible-tmp-1629445058.9760258-177209446904101/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/ubuntu/.ansible/tmp/ansible-tmp-1629445058.9760258-177209446904101/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "/home/ubuntu/.ansible/tmp/ansible-tmp-1629445058.9760258-177209446904101/shell/key-bindings.zsh"
+```
+
+Which should be 
+```
+$ cat /home/ubuntu/.fzf.zsh
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/ubuntu/.fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/home/ubuntu/.fzf/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/ubuntu/.fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "/home/ubuntu/.fzf/shell/key-bindings.zsh"
+```
