@@ -3,10 +3,10 @@
   #    local_home: "{{ lookup('env', 'HOME') }}"
   tasks:
     - include: roles/tasks/packages.yml
-    - include: roles/tasks/snap.yml
     - include: roles/tasks/tmux.yml
     - include: roles/tasks/zsh.yml
     - include: roles/tasks/fzf.yml
     - include: roles/tasks/vim.yml
-    - include: roles/tasks/gnome.yml
-
+    # don't install GUI app by default
+    # - include: roles/tasks/snap.yml
+    # - include: roles/tasks/gnome.yml

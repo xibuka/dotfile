@@ -28,11 +28,12 @@
       'powertop', 
       'powerstat', 
       'sysstat', 
-      'nautilus-dropbox', 
       'exfat-fuse', 
       'exfat-utils'
       ]
   
+      ##     'nautilus-dropbox', 
+      #
       ##     - etckeeper
       ## 
       ##     # GNOME shell
