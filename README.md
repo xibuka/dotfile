@@ -18,7 +18,7 @@ $ sudo apt install ansible
 
 # Grant root access to User
 ```
-$ sudo echo "$(id -un) ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$(id -un)
+$ echo "$(id -un) ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$(id -un)
 ```
 
 # run playbook
