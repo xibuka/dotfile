@@ -27,9 +27,7 @@
       'fonts-powerline', 
       'powertop', 
       'powerstat', 
-      'sysstat', 
-      'exfat-fuse', 
-      'exfat-utils'
+      'sysstat'
       ]
   
       ##     'nautilus-dropbox', 
